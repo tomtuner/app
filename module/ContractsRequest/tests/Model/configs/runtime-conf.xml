@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <propel>
+        <datasources default="orm">
+            <datasource id="orm">
+                <adapter>sqlite</adapter>
+                <connection>
+                    <dsn>sqlite::memory:</dsn>
+                    <classname>DebugPDO</classname>
+                    <options>
+                        <option id="ATTR_PERSISTENT">false</option>
+                    </options>
+                    <settings>
+                        <setting id="charset">utf8</setting>
+                        <setting id="queries">
+                            <query>PRAGMA foreign_keys = ON;</query>
+                        </setting>
+                    </settings>
+                </connection>
+            </datasource>
+        </datasources>
+    </propel>
+</config>

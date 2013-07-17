@@ -1,0 +1,18 @@
+/* 
+    Document   : intent-to-form.css
+    Created on : Nov 12, 2012, 3:37:15 PM
+    Author     : Nikesh Hajari
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+label.error {
+    font-weight: bold;
+    color: red;
+    padding: 2px 8px;
+    margin-top: 2px;
+}
+
+.required-star{
+    color: red;
+}

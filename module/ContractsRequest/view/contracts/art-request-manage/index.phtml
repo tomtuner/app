@@ -1,0 +1,97 @@
+<div class="container-fluid">
+
+<h1>Artwork Request Queue - Default</h1><br/>
+
+<div class="row-fluid">
+
+<div class="span12">
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                  <th>Due Date</th>
+                  <th>Event Title</th>
+                  <th>Contact Name</th>
+                  <th>Contact Email</th>
+                  <th>Contact Phone</th>
+                  <th>Status</th>
+                  <th>Artist(s)</th>
+                  <th>Detail</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+
+                    foreach($this->artRequestCollection as $artRequest) 
+                    {
+
+                        $artists = "";
+
+                        foreach($artRequest->getArtRequestAssignments() as $assignment) {
+                            if($artists != "") {
+                                $artists = $artists . ", ";
+                            }
+                            $artists = $artists . $assignment->getArtist()->getArtistFirstName() . " " . $assignment->getArtist()->getArtistLastName();
+                        }
+
+                        if($artists == "") {
+                            $artists = "(None)";
+                        }
+
+                        $statusMessage = "New";
+                        $statusClass = "error";
+
+                        if ($artRequest->getIsCompleted() == "1") {
+                            $statusMessage = "Completed";
+                            $statusClass = "success";
+                        } elseif ($artRequest->getIsStarted() == "1") {
+                            $statusMessage = "Started";
+                            $statusClass = "warning";
+                        }
+
+                        print '<tr class="' . $statusClass . '">'
+                            . "<td>"
+                            . $artRequest->getDueDate()
+                            . "</td>"
+                            . "<td>"
+                            . $artRequest->getEvent()->getEventTitle()
+                            . "</td>"
+                            . "<td>"
+                            . $artRequest->getArtRequestor()->getFirstName() . " " . $artRequest->getArtRequestor()->getLastName()
+                            . "</td>"
+                            . "<td>"
+                            . $artRequest->getArtRequestor()->getEmailAddress()
+                            . "</td>"
+                            . "<td>"
+                            . $artRequest->getArtRequestor()->getPhoneNumber()
+                            . "</td>"
+                            . "<td>"
+                            . $statusMessage
+                            . "</td>"
+                            . "<td>"
+                            . $artists
+                            . "</td>"
+                            . "<td>"
+                            . '<a href="'
+                            . $this->url('ArtRequest-manage', array('action' => 'detail', 'id' => $artRequest->getArtRequestId()))
+                            . '" class="btn btn-primary"><i class="icon-list"></i> Detail</a>'
+                            . "</td>"
+                            . "</tr>";
+
+                    }
+                
+                ?>
+              </tbody>
+        </table>
+
+        <?php
+
+            print '<a href="'
+                . $this->url('ArtRequest-manage', array('action' => 'archive'))
+                . '" class="btn btn-info btn-block"><i class="icon-list"></i> Archived Queue</a>';
+        ?>
+</div>
+
+</div>
+
+</div>

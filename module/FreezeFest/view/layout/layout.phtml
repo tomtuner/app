@@ -1,0 +1,28 @@
+<?php echo $this->doctype(); ?>
+
+<?php echo $this->headTitle("FreezeFest 2013 - Request Event") ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- Styles -->
+        <?php echo $this->headLink()->prependStylesheet($this->basePath() . '/app/assets-freezefest/css/freezefest.css')
+        							->prependStylesheet($this->basePath() . '/app/assets-freezefest/css/jquery.timepicker.css')
+        							->prependStylesheet($this->basePath() . '/app/assets-freezefest/css/bootstrap.freezefest.min.css')
+        							->prependStylesheet($this->basePath() . '/app/assets-freezefest/css/jquery-ui-1.9.0.min.css')
+        							 ?>
+        <!-- Scripts -->
+        <?php echo $this->headScript()->prependFile($this->basePath() . '/app/assets-freezefest/js/freezefest.js')
+        							  ->prependFile($this->basePath() . '/app/assets-freezefest/js/jquery.timepicker.min.js')
+        							  ->prependFile($this->basePath() . '/app/assets-freezefest/js/jquery.validate.min.js')
+        							  ->prependFile($this->basePath() . '/app/assets-freezefest/js/bootstrap.freezefest.min.js')
+        							  ->prependFile($this->basePath() . '/app/assets-freezefest/js/jquery-ui-1.9.0.min.js')
+        							  ->prependFile($this->basePath() . '/app/assets-freezefest/js/jquery-1.8.2.min.js') ?>
+    </head>
+    <body>
+    	<div class="container">
+            <?php echo $this->content; ?>
+        </div> <!-- /container -->
+        <?php echo $this->inlineScript() ?>
+    </body>
+</html>

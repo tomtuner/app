@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <propel>
+        <datasources>
+            <datasource id="art_request">
+                <adapter>mysql</adapter>
+                <connection>
+                    <dsn>mysql:host=127.0.0.1;port=3306;dbname=art_request</dsn>
+                    <user>cclwww</user>
+                    <password>EatYourDat4</password>
+                    <attributes>
+                        <option id="MYSQL_ATTR_USE_BUFFERED_QUERY">true</option>
+                    </attributes>
+                    <settings>
+                        <setting id="queries">
+                            <query>SET NAMES utf8</query><!-- automatically set UTF8 encoding -->
+                        </setting>
+                    </settings>
+                </connection>
+            </datasource>
+            <datasource id="commuter_week">
+                <adapter>mysql</adapter>
+                <connection>
+                    <dsn>mysql:host=127.0.0.1;port=3306;dbname=commuter_week</dsn>
+                    <user>root</user>
+                    <password></password>
+                    <attributes>
+                        <option id="MYSQL_ATTR_USE_BUFFERED_QUERY">true</option>
+                    </attributes>
+                    <settings>
+                        <setting id="queries">
+                            <query>SET NAMES utf8</query><!-- automatically set UTF8 encoding -->
+                        </setting>
+                    </settings>
+                </connection>
+            </datasource>
+                        <datasource id="clubs">
+                <adapter>mysql</adapter>
+                <connection>
+                    <dsn>mysql:host=localhost;port=3306;dbname=clubs</dsn>
+                    <user>cclwww</user>
+                    <password>EatYourDat4</password>
+                    <attributes>
+                        <option id="MYSQL_ATTR_USE_BUFFERED_QUERY">true</option>
+                    </attributes>
+                    <settings>
+                        <setting id="queries">
+                            <query>SET NAMES utf8</query><!-- automatically set UTF8 encoding -->
+                        </setting>
+                    </settings>
+                </connection>
+            </datasource>
+            <datasource id="newclubs">
+                <adapter>mysql</adapter>
+                <connection>
+                    <dsn>mysql:host=localhost;port=3306;dbname=newclubs</dsn>
+                    <user>cclwww</user>
+                    <password>EatYourDat4</password>
+                    <attributes>
+                        <option id="MYSQL_ATTR_USE_BUFFERED_QUERY">true</option>
+                    </attributes>
+                    <settings>
+                        <setting id="queries">
+                            <query>SET NAMES utf8</query><!-- automatically set UTF8 encoding -->
+                        </setting>
+                    </settings>
+                </connection>
+            </datasource>
+            <datasource id="users">
+                <adapter>mysql</adapter>
+                <connection>
+                    <dsn>mysql:host=localhost;port=3306;dbname=users</dsn>
+                    <user>cclwww</user>
+                    <password>EatYourDat4</password>
+                    <attributes>
+                        <option id="MYSQL_ATTR_USE_BUFFERED_QUERY">true</option>
+                    </attributes>
+                    <settings>
+                        <setting id="queries">
+                            <query>SET NAMES utf8</query><!-- automatically set UTF8 encoding -->
+                        </setting>
+                    </settings>
+                </connection>
+            </datasource>
+            <datasource id="organizations">
+                <adapter>mysql</adapter>
+                <connection>
+                    <dsn>mysql:host=localhost;port=3306;dbname=organizations</dsn>
+                    <user>cclwww</user>
+                    <password>EatYourDat4</password>
+                    <attributes>
+                        <option id="MYSQL_ATTR_USE_BUFFERED_QUERY">true</option>
+                    </attributes>
+                    <settings>
+                        <setting id="queries">
+                            <query>SET NAMES utf8</query><!-- automatically set UTF8 encoding -->
+                        </setting>
+                    </settings>
+                </connection>
+            </datasource>
+        </datasources>
+    </propel>
+</config>

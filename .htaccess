@@ -1,0 +1,17 @@
+#Begin HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#End HTTPS
+
+#Begin Shibboleth
+AuthType shibboleth
+ShibRequireSession On
+require valid-user
+#End Shibboleth
+
+#Begin Zend
+php_value display_errors on
+RewriteEngine On
+RewriteRule ^(.*)$ public/$1 [QSA,L]
+#End Zend

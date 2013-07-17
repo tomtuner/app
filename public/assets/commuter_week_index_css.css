@@ -1,0 +1,18 @@
+/* 
+    Document   : commuter-index
+    Created on : Feb 14, 2013, 10:30:57 AM
+    Author     : Nikesh Hajari
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.required-star{
+    color: red;
+}
+
+label.error {
+    font-weight: bold;
+    color: red;
+    padding: 2px 8px;
+    margin-top: 2px;
+}

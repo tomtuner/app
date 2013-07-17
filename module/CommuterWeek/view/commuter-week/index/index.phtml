@@ -1,0 +1,190 @@
+<div class="container-fluid">
+
+    <div class="page-header">
+        <h1>
+            Commuter SpiRIT Week Registration <br/> 
+            <small>March 11th - March 15th, 2013</small>
+        </h1>
+    </div>
+    <p class="lead">
+        The information is being collected as a way to better serve the needs of RIT's off-campus and commuter student population.
+        In addition, in order to participate in the week' activities and to have the chance to win prizes, participate in activities,
+        free food, etc. You need to register in order receive your Commuter Week wristband. Registration is required for full participation
+        in Commuter SpiRIT Week.
+    </p>
+
+    <form id="commuter_registration_form" class="form-vertical" name="commuter_registration_form" method="POST" enctype="multipart/form-data" action="/app/commuter-week/create">
+
+        <p>
+            <span class="required-star">*</span> = required field
+        </p>
+
+        <div class="row-fluid">
+
+            <div class="row-fluid">
+                <h3>About You</h3>
+            </div>
+
+            <div class="well">
+
+                <div class="row-fluid">
+
+                    <div class="span3">
+                        <div class="control-group">
+                            <label class="control-label" for="graduation_class_year"><span class="required-star">*</span> Graduation Class Year:</label>
+                            <div class="controls">
+                                <input type="text" id="graduation_class_year" name="graduation_class_year" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="span3 offset1">
+                        <div class="control-group">
+                            <label class="control-label" for="rit_college_id"><span class="required-star">*</span> RIT College:</label>
+                            <div class="controls">
+                                <select id="rit_college_id" name="rit_college_id">
+                                    <option value="">Select Choice</option>
+                                    <?php
+                                    foreach($this->ritCollegeTypes as $ritCollegeType)
+                                    {
+                                        print '<option value="'
+                                                . $ritCollegeType->getRitCollegeId()
+                                                . '">'
+                                                . $ritCollegeType->getRitCollegeName()
+                                                . '</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-fluid"> <!-- Start Row -->
+
+            <div class="row-fluid">
+                <h3>Commuter Information</h3>
+            </div>
+
+            <div class="well">
+
+                <div class="row-fluid">
+                    <div class="span3">
+                        <div class="control-group">
+                            <label class="control-label" for="local_address_one">Local Address One:</label>
+                            <div class="controls">
+                                <input type="text" id="local_address_one" name="local_address_one" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span3">
+                        <div class="control-group">
+                            <label class="control-label" for="local_address_two">Local Address Two:</label>
+                            <div class="controls">
+                                <input type="text" id="local_address_two" name="local_address_two" />
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span3">
+                        <div class="control-group">
+                            <label class="control-label" for="city_name"><span class="required-star">*</span> City Name:</label>
+                            <div class="controls">
+                                <input type="text" id="city_name" name="city_name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span3 offset1">
+                        <div class="control-group">
+                            <label class="control-label" for="state_code">State:</label>
+                            <div class="controls">
+                                <input type="text" id="state_code" name="state_code" value="NY" disabled />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span3 offset1">
+                        <div class="control-group">
+                            <label class="control-label" for="zip_code"><span class="required-star">*</span> ZIP Code:</label>
+                            <div class="controls">
+                                <input type="text" id="zip_code" name="zip_code" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+
+                    <div class="span3">
+                        <div class="control-group">
+                            <label class="control-label" for="dwelling_choice_id"><span class="required-star">*</span> Do you live in a apartment or house?</label>
+                            <div class="controls">
+                                <select id="dwelling_choice_id" name="dwelling_choice_id">
+                                    <option value="">Select Choice</option>
+                                    <?php
+                                    foreach($this->dwellingTypes as $dwellingType)
+                                    {
+                                        print '<option value="'
+                                                . $dwellingType->getDwellingChoiceId()
+                                                . '">'
+                                                . $dwellingType->getDwellingChoiceType()
+                                                . '</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="span3 offset1">
+                        <div class="control-group">
+                            <label class="control-label" for="roommate_type_id"><span class="required-star">*</span> Do you live by yourself, have roommate(s), or family?</label>
+                            <div class="controls">
+                                <select id="roommate_type_id" name="roommate_type_id">
+                                    <option value="">Select Choice</option>
+                                    <?php
+                                    foreach($this->roomMateTypes as $roomMateType)
+                                    {
+                                        print '<option value="'
+                                                . $roomMateType->getRoommateTypeId()
+                                                . '">'
+                                                . $roomMateType->getRoommateTypeName()
+                                                . '</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="span3 offset1">
+                        <div class="control-group">
+                            <label class="control-label" for="apartment_complex_name">Apartment Complex Name:</label>
+                            <div class="controls">
+                                <input type="text" id="apartment_complex_name" name="apartment_complex_name" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div> <!-- Well End -->
+
+        </div> <!--Row End-->
+		
+		<p class="lead">
+			Thank you for registering to participate in Commuter SpiRIT Week - for a full list of events please visit rit.edu/ace or on facebook at ACE at RIT.  Once you have your confirmation you will be directed as to the process for acquiring your wristband to participate.
+		</p>
+
+        <div class="form-actions">                
+            <button type="submit" class="btn btn-primary btn-large">Submit</button>
+        </div>
+
+    </form>
+</div>

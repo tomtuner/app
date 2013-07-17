@@ -1,0 +1,169 @@
+<div class="row-fluid">
+	<div class="span8 offset2">
+	<img src="/app/assets-freezefest/img/banner.png"/>
+		<div class="contentSheet">
+			<form action="https://campuslife.rit.edu/app/freezefest-request/create" method="post" id="registrationForm">
+				<div style="font-size:24pt; line-height:130%;">STEP 1: Request Your Event</div><br/>
+				<div style="font-size:18pt; line-height:130%;">Looking to host your event during FreezeFest this year?</div><br/>
+				
+				To submit your REQUEST for FreezeFest 2013 involvement, please submit the following form. A Center for Campus Life representative will contact you to confirm if and when your event will occur during the weekend schedule.<br/><br/>
+			
+				Please note availability is limited, and confirmation is on a case by case basis.<br/><br/>
+		
+				<b><i>This does NOT replace the need to EVR your event should you receive approval to move forward.</i></b><br/><br/>
+				<legend></legend>
+				<label>Club Name</label>
+				<input type="text" name="clubName" id="clubName" class="required inClubList" placeholder=""><br/>
+				<label>Responsible Representative</label>
+				<input type="text" name="repName" class="required" minlength="2" placeholder="Name" value="<?php print $this->autofillName; ?>"><br/>
+				<input type="text" name="repEmail" class="required email" placeholder="Email Address" value="<?php print $this->autofillEmail; ?>"><br/>
+				<label>Proposed Event Name</label>
+				<input type="text" name="eventName" class="required" minlength="2" placeholder=""><br/>
+				<label>Event Description</label>
+				<textarea class="field span9 required" minlength="10" rows="6" name="eventDescription" placeholder="Please provide a detailed summary of what you are looking to do."></textarea><br/>
+				<label>Where would you like your event to take place?</label>
+				<select name="eventLocationDropdown" id="eventLocationDropdown" class="required">
+					<option value="">Select Location</option>
+					<option value="">------------------------</option>
+					<option value="Other">Other</option>
+					<option value="">------------------------</option>
+					<option value="Apartment Area">Apartment Area</option>
+					<option value="Athletic Fields">Athletic Fields</option>
+					<option value="CIMS">CIMS</option>
+					<option value="Clark Gym/Aux Gym/Breezeway">Clark Gym/Aux Gym/Breezeway</option>
+					<option value="Crossroads">Crossroads</option>
+					<option value="Dining Commons">Dining Commons</option>
+					<option value="Eastman">Eastman</option>
+					<option value="Field House">Field House</option>
+					<option value="Field House Pool">Field House Pool</option>
+					<option value="Global Village Plaza">Global Village Plaza</option>
+					<option value="Grace Watson BBQ">Grace Watson BBQ</option>
+					<option value="Gracies">Gracies</option>
+					<option value="Greek Circle">Greek Circle</option>
+					<option value="Greek Lawn">Greek Lawn</option>
+					<option value="Innovation Center">Innovation Center</option>
+					<option value="LBJ & SDC Buildings">LBJ & SDC Buildings</option>
+					<option value="Outdoor Academic">Outdoor Academic</option>
+					<option value="Residence Hall Conference Rooms">Residence Hall Conference Rooms</option>
+					<option value="Residence Hall: Baker, Colby, Gleason, 90 Area & Sundial">Residence Hall: Baker, Colby, Gleason, 90 Area & Sundial</option>
+					<option value="Residence Hall: Ellingson/Peterson/Residence Hall D">Residence Hall: Ellingson/Peterson/Residence Hall D</option>
+					<option value="Residence Hall: NRH/SFG Area">Residence Hall: NRH/SFG Area</option>
+					<option value="Ritter Ice Arena">Ritter Ice Arena</option>
+					<option value="Ritz SportsZone">Ritz SportsZone</option>
+					<option value="SAU Cafeteria">SAU Cafeteria</option>
+					<option value="SAU/Campus Center">SAU/Campus Center</option>
+					<option value="Schmitt Interfaith Center">Schmitt Interfaith Center</option>
+					<option value="Student Life Center">Student Life Center</option>
+					<option value="Xerox Auditorium">Xerox Auditorium</option>
+				</select><br/>
+				<input type="text" style="display:none;" class="required" name="eventLocationOther" id="eventLocationOther" placeholder="Other Location">
+				<label>When would you like your event to take place?</label>
+				<select name="eventDate" class="required">
+					<option value="">Select Date</option>
+					<option value="">------------------------</option>
+					<option value="Friday">Friday, February 1, 2013</option>
+					<option value="Saturday">Saturday, February 2, 2013</option>
+					<option value="Sunday">Sunday, February 3, 2013</option>
+				</select>
+				<input type="hidden" name="eventLocation" id="eventLocation">
+				<br/>
+				<input type="text" class="input-small time required time12h" name="eventTimeStart" id="eventTimeStart" placeholder="Start Time">
+				&nbsp;to&nbsp;
+				<input type="text" class="input-small time required time12h" name="eventTimeEnd" id="eventTimeEnd" placeholder="End Time">
+				<label>Estimated Number of Attendees</label>
+				<input type="text" class="span2 required" minlength="1" name="eventAttendance" placeholder=""><br/>
+				<label>Services Needed</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="Brick City Catering"/> Brick City Catering
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="Curtains"/> Curtains
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="Environmental Health & Safety/Permits/Occupancy"/> Environmental Health & Safety/Permits/Occupancy
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="ETC and Wallace Support Services"/> ETC and Wallace Support Services
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="Facilities Management"/> Facilities Management
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="Interpreting Residence Life/RHA"/> Interpreting Residence Life/RHA
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="Interpreting Student Activities"/> Interpreting Student Activities
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="Off Campus Caterer"/> Off Campus Caterer
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="Parking"/> Parking
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="Pop Corn/Cotton Candy Machine Rental"/> Pop Corn/Cotton Candy Machine Rental
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="Public Safety"/> Public Safety
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="Risk Management"/> Risk Management
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="RITA"/> RITA
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="Serving Food/Picnic Events"/> Serving Food/Picnic Events
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="Tech Crew"/> Tech Crew
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="Van Requests"/> Van Requests
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="service[]" value="WITR"/> WITR
+				</label>
+				Other:&nbsp;<input type="text" name="service[]" id="serviceOther" placeholder="">
+				<br/>
+				<label>What will you be charging for your event?</label>
+				<br/>
+				<div class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label">Student Fee:</label>
+						<div class="controls">
+							<input type="text" class="input-small required" minlength="1" name="studentFee" placeholder=""><br/>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">Staff Fee:</label>
+						<div class="controls">
+							<input type="text" class="input-small required" minlength="1" name="staffFee" placeholder=""><br/>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">Public Fee:</label>
+						<div class="controls">
+							<input type="text" class="input-small required" minlength="1" name="publicFee" placeholder=""><br/>
+						</div>
+					</div>
+				</div>
+				<label>If there is a cost associated with this event,<br/>please list a reason for the cost.</label>
+				<input type="text" name="costReason" id="costReason" placeholder="(eg: charity, benefit, etc.)"><br/><br/>
+				<label class="checkbox">
+					<input type="checkbox" name="hasOccurredBefore" value="true"/> Has this event occurred in past FreezeFest years?
+				</label><br/>
+				<label class="checkbox">
+					<input type="checkbox" name="wantsCCLFunds" value="true"/> Would you like to request funding from the Center for Campus Life for this event?
+				</label><br/>
+				<b><u>Funding Information</u></b><br/>
+Please advise that there are limited opportunities for funding support for FreezeFest events that are not sponsored specifically by the Center for Campus Life. After Dec. 21st, funding requests will be analyzed. If you’d like a more expedient response on funding for your event, please apply for SG Additional Funds: <a href="http://www.rit.edu/sg/forms.php" target="_blank">http://www.rit.edu/sg/forms.php</a>.<br/><br/>
+				<div style="font-size:24pt; line-height:130%;">STEP 2: Wait for Confirmation of Event Approval</div><br/>
+				You are past the deadline to be guaranteed inclusion in <b>printed</b> promotional materials for this year’s FreezeFest. You will hear from a Center for Campus Life representative on if your event is approved and if you are able to be included in print collateral by Friday, December 21st. If your event is approved, you must also EVR your event at that time.<br/><br/>
+				<div class="pull-right">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

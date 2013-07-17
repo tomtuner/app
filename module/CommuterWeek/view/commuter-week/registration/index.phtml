@@ -1,0 +1,65 @@
+<div class="container-fluid">
+
+    <div class="page-header">
+        <h1>
+            Commuter SpiRIT Week Registration List <br/> 
+        </h1>
+    </div>
+	
+	<div class="row-fluid">
+		<table class="table table-striped">
+			<thead>
+                <tr>
+                  <th>Name</th>
+                  <th>E-mail Address</th>
+                  <th>Address</th>
+                  <th>College</th>
+                  <th>Graduation Year</th>
+                  <th>Apartment/House</th>
+                  <th>Live With?</th>
+                  <th>Apartment Complex</th>
+                </tr>
+              </thead>
+              <tbody>
+				<?php
+				
+					foreach($this->commuterCollection as $commuter)
+					{
+						print "<tr>"
+						    . "<td>"
+							. $commuter->getFirstName() . " " . $commuter->getLastName()
+							. "</td>"
+							. "<td>"
+							. $commuter->getEmailAddress()
+							. "</td>"
+							. "<td>"
+							. $commuter->getLocalAddressOne()
+							. "<br/>"
+							. $commuter->getlocalAddressTwo()
+							. "<br/>"
+							. $commuter->getCityName() . ", NY " . $commuter->getZipCode()
+							. "</td>"
+							. "<td>"
+							. $commuter->getRitCollege()->getRitCollegeName()
+							. "</td>"
+							. "<td>"
+							. $commuter->getGraduationClassYear()
+							. "</td>"
+							. "<td>"
+							. $commuter->getDwellingChoice()->getDwellingChoiceType()
+							. "</td>"
+							. "<td>"
+							. $commuter->getRoommateType()->getRoommateTypeName()
+							. "</td>"
+							. "<td>"
+							. $commuter->getApartmentComplexName()
+							. "</td>"
+							. "</tr>";
+					}
+				
+				?>
+              </tbody>
+		</table>
+	</div>
+    
+</div>

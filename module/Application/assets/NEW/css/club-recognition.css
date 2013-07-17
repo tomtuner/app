@@ -1,0 +1,31 @@
+/* 
+    Document   : club-recognition.css
+    Created on : Oct 25, 2012, 5:00:49 PM
+    Author     : Nikesh Hajari
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+label.error {
+    font-weight: bold;
+    color: red;
+    padding: 2px 8px;
+    margin-top: 2px;
+}
+
+.required-star{
+    color: red;
+}
+
+.recognition-button-container{
+    text-align: center;
+}
+
+.btn-delete-eboard-member{
+    margin-top: 3px;
+}
+
+.center-submit-button{
+    text-align: center;
+    margin-top: 20px;
+}
