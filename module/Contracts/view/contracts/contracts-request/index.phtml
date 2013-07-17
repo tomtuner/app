@@ -4,29 +4,50 @@
 
 <div class="span8 offset2">
 
-    <h1>Artwork Request</h1><br/>
+    <h1>Contract Request</h1><br/>
 
-    <form id="art_request_form" name="art_request_form" method="POST" enctype="multipart/form-data" action="/app/art-request/create">
+    <form id="art_request_form" name="art_request_form" method="POST" enctype="multipart/form-data" action="/app/contracts/create">
 
         <div class="row-fluid">
 
             <div class="well">
 
                 <div class="row-fluid">
-                    <h3>Tell Us About Yourself</h3>
+                    <h3>Organization Information</h3>
                 </div>
 
                 <div class="row-fluid">
 
                     <div class="span6">
                         <div class="control-group">
-                            <label class="control-label" for="phone_number">Phone Number:</label>
+                            <label class="control-label" for="sponsor_org">Sponsoring Organization:</label>
+                            <div class="controls">
+                                <div class="input-prepend">
+                                    <!-- <span class="add-on"><i class="icon-phone"></i></span> -->
+                                    <input type="text" id="sponsor_org" name="sponsor_org" />
+                                </div>
+                            </div>
+                            <label class="control-label" for="contact_name">Contact Name:</label>
+                            <div class="controls">
+                                <div class="input-prepend">
+                                    <!-- <span class="add-on"><i class="icon-phone"></i></span> -->
+                                    <input type="text" id="contact_name" name="contact_name" />
+                                </div>
+                            </div>
+                            <label class="control-label" for="phone_number">Contact Phone Number:</label>
                             <div class="controls">
                                 <div class="input-prepend">
                                     <span class="add-on"><i class="icon-phone"></i></span>
                                     <input type="text" id="phone_number" name="phone_number" />
                                 </div>
                             </div>
+                            <label class="control-label" for="email">E-Mail:</label>
+                            <div class="controls">
+                                <div class="input-prepend">
+                                    <input type="text" id="email" name="email" />
+                                </div>
+                            </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -40,27 +61,45 @@
             <div class="well">
 
                 <div class="row-fluid">
-                    <h3>When Do You Need It By?</h3>
+                    <h3>Event Details</h3>
 
-                    <p>
+                    <!-- <p>
                         Your request must be submitted <b>at least 2 weeks before your art is needed</b>. If you need it in less time please contact
                         <a href="mailto:radccl@rit.edu?subject=Art Request">Rebecca Delaney</a> for approval.
-                    </p>
+                    </p> -->
                 </div>
 
                 <div class="row-fluid">
                     <div class="span6">
                         <div class="control-group">
-                            <label class="control-label" for="request_due_date">Request Due Date:</label>
+                            <label class="control-label" for="request_due_date">Event Title:</label>
                             <div class="controls">
                                 <div class="input-prepend">
-                                    <span class="add-on"><i class="icon-calendar"></i></span>
-                                    <input type="text" id="request_due_date" name="request_due_date" />
+                                    <!-- <span class="add-on"><i class="icon-calendar"></i></span> -->
+                                    <input type="text" id="event_title" name="event_title" />
+                                    <!-- <input type="text" id="request_due_date" name="request_due_date" /> -->
+                                </div>
+                            </div>
+                            <label class="control-label" for="service_type">Pick what type of service you need:</label>
+                            <div class="controls">
+                                <div class="input-prepend">
+                                    <!-- <span class="add-on"><i class="icon-calendar"></i></span> -->
+						            <button type="submit" name="service_type" class="btn btn-primary btn-large service_type">Create Contract for Artist</button>
+						            <button type="submit" name="service_type" class="btn btn-primary btn-large">Complete Artist Supplied Contract</button>
+									
+                                    <!-- <input type="text" id="request_due_date" name="request_due_date" /> -->
+                                </div>
+                            </div>
+                            <label class="control-label" for="artist_name">Artist Name:</label>
+                            <div class="controls">
+                                <div class="input-prepend">
+                                    <!-- <span class="add-on"><i class="icon-calendar"></i></span> -->
+                                    <input type="text" id="artist_name" name="artist_name" />
+                                    <!-- <input type="text" id="request_due_date" name="request_due_date" /> -->
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
             </div> <!-- Well End -->
