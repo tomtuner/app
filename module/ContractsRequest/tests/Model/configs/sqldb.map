@@ -1,3 +1,0 @@
-# Sqlfile -> Database map
-schema.sql=orm
-data.sql=orm

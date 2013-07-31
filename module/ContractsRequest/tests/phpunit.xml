@@ -1,8 +1,0 @@
-<phpunit bootstrap="Bootstrap.php">
-    <testsuite name="Model">
-        <directory>./Model</directory>
-    </testsuite>
-    <testsuite name="Factory">
-        <directory>./Factory</directory>
-    </testsuite>
-</phpunit>
