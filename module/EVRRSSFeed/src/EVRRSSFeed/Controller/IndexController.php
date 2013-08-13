@@ -40,28 +40,28 @@ class IndexController extends AbstractActionController
     {
         try
         {
-			print_r("Start Here");
+			//print_r("Start Here Thomas");
 			
             $this->services->get('DatabaseConnection')->getConnection('evr');
-			print_r("Start Here");
+			// print_r("Start Here DeMeo");
 	
 			$s = new RSSFeedService();
-			print_r("Here 0");
+			// print_r("Here 0");
 			
 			$s->addModel(new \EVRRSSFeed\Model\EVRRSSFeedViewModel());
-			error_log("Here 0.5");
+			// error_log("Here 0.5");
 			
 			$xml = $s->getRSSFeed();
-			error_log("Here 1");
+			// error_log("Here 1");
 			//returning response object so we don't have to render a view file
 			$response = $this->getResponse();
-			error_log("Here 2");
+			// error_log("Here 2");
 			
 			$response->setStatusCode(200);
-			error_log("Here 3");
+			// error_log("Here 3");
 			
 			$response->setContent($xml);
-			error_log("Here 4");
+			// error_log("Here 4");
 			
 			$response->getHeaders()->addHeaders(array('Content-type' => 'text/xml'));
 			return $response;

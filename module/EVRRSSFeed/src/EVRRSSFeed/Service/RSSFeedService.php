@@ -20,8 +20,11 @@ class RSSFeedService extends AbstractService
 	{
 		try
 		{
+			// print_r("Start Here RSS Before");
+			
 			$resultSet = $this->getModel('EVRRSSFeed\Model\EVRRSSFeedViewModel')
 					  ->getEvents();
+			// print_r("Start Here RSS");
 					  
 			//create dom document
 			$d = new \DOMDocument('1.0', 'utf-8');
@@ -31,6 +34,7 @@ class RSSFeedService extends AbstractService
 			$rssElement->setAttribute('version', '2.0');
 			$rssElement->setAttributeNS('http://www.w3.org/2000/xmlns/' ,'xmlns:atom', 'http://www.w3.org/2005/Atom');
 			$rssRoot = $d->appendChild($rssElement);
+			// print_r("Start Here RSS 1");
 			
 			//create channel
 			$c = $rssRoot->appendChild(new \DOMElement('channel'));
@@ -42,6 +46,7 @@ class RSSFeedService extends AbstractService
 			//add channel description
 			$cD = $c->appendChild(new \DOMElement('description'));
 			$cD->appendChild(new \DOMText('EVR Upcoming Events - Campus Center for Life'));		
+			// print_r("Start Here RSS 2");
 			
 			foreach($resultSet as $r)
 			{	
@@ -93,6 +98,8 @@ class RSSFeedService extends AbstractService
 				$endDate = $e->appendChild(new \DOMElement('enddate'));
 				$endDate->appendChild(new \DOMText($r->getEventEndTime()));
 			}
+			// print_r("Start Here RSS 3");
+			
 	 			
 			return $d->saveXML();
 

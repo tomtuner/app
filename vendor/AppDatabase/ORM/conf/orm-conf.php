@@ -148,6 +148,30 @@ $conf = array (
         ),
       ),
     ),
+    'evr' => 
+    array (
+      'adapter' => 'mysql',
+      'connection' => 
+      array (
+        'dsn' => 'mysql:host=localhost;port=3306;dbname=evr',
+        'user' => 'cclwww',
+        'password' => 'EatYourDat4',
+        'attributes' => 
+        array (
+          'MYSQL_ATTR_USE_BUFFERED_QUERY' => 
+          array (
+            'value' => true,
+          ),
+        ),
+        'settings' => 
+        array (
+          'queries' => 
+          array (
+            'query' => 'SET NAMES utf8',
+          ),
+        ),
+      ),
+    ),
   ),
   'generator_version' => '1.6.7',
 );
